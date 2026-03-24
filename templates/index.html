@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI vs Real Detector</title>
+    <style>
+        body {
+    	background: url("/static/bg.png") no-repeat center center fixed;
+    	background-size: cover;
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+        margin-top: 80px;
+        }
+
+        .container {
+            background: rgba(0,0,0,0.3);
+            padding: 40px;
+            border-radius: 15px;
+            width: 350px;
+            margin: auto;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #00c9a7;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #00a98f;
+        }
+
+        .result {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>AI vs Real Detector</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+            <div class="result">{{ result }}</div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
