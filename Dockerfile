@@ -7,4 +7,4 @@ COPY . .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-CMD ["gunicorn", "app:app"]
+CMD ["python", "app.py"]
